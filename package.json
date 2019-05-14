@@ -1,30 +1,30 @@
 {
-  "name": "napi-example",
-  "version": "1.0.0",
-  "description": "Node addon N-API example",
-  "main": "index.js",
-  "scripts": {
-    "configure": "node-gyp configure",
-    "build": "node-gyp build",
-    "test": "node ./test/example.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theahmadzai/napi-example.git"
-  },
-  "keywords": [
-    "napi",
-    "nan",
-    "node-addon-api"
-  ],
-  "author": "Javed Ahmadzai",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/theahmadzai/napi-example/issues"
-  },
-  "homepage": "https://github.com/theahmadzai/napi-example#readme",
-  "dependencies": {
-    "bindings": "^1.5.0",
-    "node-addon-api": "^1.6.3"
-  }
+    "name": "napi-example",
+    "version": "1.0.0",
+    "description": "Node addon N-API example",
+    "main": "index.js",
+    "scripts": {
+        "configure": "node-gyp configure",
+        "build": "node-gyp build",
+        "test": "node ./test/example.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/theahmadzai/napi-example.git"
+    },
+    "keywords": [
+        "napi",
+        "nan",
+        "node-addon-api"
+    ],
+    "author": "Javed Ahmadzai",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/theahmadzai/napi-example/issues"
+    },
+    "homepage": "https://github.com/theahmadzai/napi-example#readme",
+    "dependencies": {
+        "bindings": "^1.5.0",
+        "node-addon-api": "^1.6.3"
+    }
 }
