@@ -1,16 +1,15 @@
 #include <napi.h>
 
-Napi::String Method(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
+using namespace Napi;
 
-    return Napi::String::New(env, "world");
+String Hello(const CallbackInfo& info) {
+    Env env = info.Env();
+
+    return String::New(env, "world");
 }
 
-Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    exports.Set(
-        Napi::String::New(env, "hello"),
-        Napi::Function::New(env, Method)
-    );
+Object Init(Env env, Object exports) {
+    exports.Set(String::New(env, "hello"), Function::New(env, Hello));
 
     return exports;
 }
