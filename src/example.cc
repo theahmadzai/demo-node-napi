@@ -2,13 +2,15 @@
 
 using namespace Napi;
 
-String Hello(const CallbackInfo& info) {
+String Hello(const CallbackInfo& info)
+{
     Env env = info.Env();
 
     return String::New(env, "world");
 }
 
-Object Init(Env env, Object exports) {
+Object Init(Env env, Object exports)
+{
     exports.Set(String::New(env, "hello"), Function::New(env, Hello));
 
     return exports;

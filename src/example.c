@@ -1,7 +1,8 @@
-#include <node_api.h>
 #include <assert.h>
+#include <node_api.h>
 
-napi_value add(napi_env env, const napi_callback_info info) {
+napi_value add(napi_env env, const napi_callback_info info)
+{
     napi_status status;
 
     size_t argc = 2;
@@ -10,8 +11,7 @@ napi_value add(napi_env env, const napi_callback_info info) {
     assert(status == napi_ok);
 
     int numbers[2];
-    if(napi_get_value_int32(env, argv[0], &numbers[0]) != napi_ok ||
-        napi_get_value_int32(env, argv[1], &numbers[1]) != napi_ok ) {
+    if (napi_get_value_int32(env, argv[0], &numbers[0]) != napi_ok || napi_get_value_int32(env, argv[1], &numbers[1]) != napi_ok) {
         napi_throw_error(env, NULL, "Invalid number was passed as argument");
     }
 
@@ -23,7 +23,8 @@ napi_value add(napi_env env, const napi_callback_info info) {
     return result;
 }
 
-napi_value test(napi_env env, const napi_callback_info info) {
+napi_value test(napi_env env, const napi_callback_info info)
+{
     napi_status status;
 
     size_t argc = 1;
@@ -46,12 +47,13 @@ napi_value test(napi_env env, const napi_callback_info info) {
     return NULL;
 }
 
-napi_value Init(napi_env env, napi_value exports) {
+napi_value Init(napi_env env, napi_value exports)
+{
     napi_status status;
 
     /**
-        Binding for add function
-    */
+      Binding for add function
+  */
     napi_value add_r;
     status = napi_create_function(env, NULL, 0, add, NULL, &add_r);
     assert(status == napi_ok);
@@ -59,8 +61,8 @@ napi_value Init(napi_env env, napi_value exports) {
     assert(status == napi_ok);
 
     /**
-        Binding for test function
-    */
+      Binding for test function
+  */
     napi_value test_r;
     status = napi_create_function(env, NULL, 0, test, NULL, &test_r);
     assert(status == napi_ok);
